@@ -1,5 +1,5 @@
 import React from "react";
-import Lottie from "react-lottie";
+import Lottie from "../Lottie";
 import { Box, Heading, Text, Button, Grid } from "@chakra-ui/react";
 import developmentProcess from "../../lotties/development-process.json";
 
@@ -66,7 +66,7 @@ const Hero = () => {
         </Button>
       </Box>
       <Box width="100%" display="flex" alignItems="center" gridArea="chart">
-        <Lottie options={options} width="100%" speed={2} height="auto" />
+        <Lottie options={options} width="100%" speed={3} height="auto" />
       </Box>
     </Grid>
   );
