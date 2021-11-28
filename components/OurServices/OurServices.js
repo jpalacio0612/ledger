@@ -5,6 +5,8 @@ import ServiceCard from "../ServiceCard";
 const OurServices = () => {
   return (
     <Box
+      as="section"
+      id="our-services"
       height="auto"
       padding={4}
       bgColor="gray.900"

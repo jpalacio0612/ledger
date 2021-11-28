@@ -17,6 +17,7 @@ import {
   AiFillTwitterSquare,
 } from "react-icons/ai";
 import { HamburgerIcon } from "@chakra-ui/icons";
+import ScrollLink from "../ScrollLink";
 
 const Navbar = () => {
   return (
@@ -27,7 +28,7 @@ const Navbar = () => {
         display={{ base: "none", md: "none", lg: "flex" }}
       >
         <Link>Home</Link>
-        <Link>Servicios</Link>
+        <ScrollLink to="our-services">Servicios</ScrollLink>
         <Link>Proyectos</Link>
         <Link>Carreras</Link>
         <Button colorScheme="red">Contactanos</Button>

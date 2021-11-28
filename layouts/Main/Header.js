@@ -18,6 +18,7 @@ const Header = () => {
       paddingY={2}
     >
       <Image
+        priority
         src="/images/white-logo.png"
         alt="ledger"
         width={250}
