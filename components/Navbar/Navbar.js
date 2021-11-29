@@ -1,25 +1,29 @@
-import React from "react";
-import {
-  Box,
-  HStack,
-  Link,
-  Button,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  IconButton,
-} from "@chakra-ui/react";
+import React, { useState } from "react";
+import { Box, HStack, Link, Button, IconButton } from "@chakra-ui/react";
 import {
   AiOutlineSearch,
   AiFillInstagram,
   AiFillFacebook,
   AiFillTwitterSquare,
 } from "react-icons/ai";
-import { HamburgerIcon } from "@chakra-ui/icons";
+import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import ScrollLink from "../ScrollLink";
+import SideMenu from "../SideMenu";
+import { useDebounce } from "../../hooks/useDebounce";
 
 const Navbar = () => {
+  const [showMenu, setShowMenu] = useState(false);
+
+  const showMenuDebounced = useDebounce(showMenu, 100);
+
+  const onCloseMenu = () => {
+    setShowMenu(false);
+  };
+
+  const onOpenMenu = () => {
+    setShowMenu(true);
+  };
+
   return (
     <>
       <HStack
@@ -40,22 +44,22 @@ const Navbar = () => {
         </HStack>
       </HStack>
       <Box display={{ base: "block", lg: "none" }}>
-        <Menu>
-          <MenuButton
-            as={IconButton}
-            aria-label="Options"
-            icon={<HamburgerIcon />}
+        {!showMenuDebounced ? (
+          <IconButton
+            icon={<HamburgerIcon width={8} height={8} onClick={onOpenMenu} />}
             size="lg"
             variant="ghost"
             colorScheme="white"
           />
-          <MenuList color="black">
-            <MenuItem>Home</MenuItem>
-            <MenuItem>Servicios</MenuItem>
-            <MenuItem>Proyectos</MenuItem>
-            <MenuItem>Carreras</MenuItem>
-          </MenuList>
-        </Menu>
+        ) : (
+          <IconButton
+            icon={<CloseIcon width={6} height={6} onClick={onCloseMenu} />}
+            size="lg"
+            variant="ghost"
+            colorScheme="white"
+          />
+        )}
+        <SideMenu showMenu={showMenu} onCloseMenu={onCloseMenu} />
       </Box>
     </>
   );
