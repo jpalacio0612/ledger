@@ -35,13 +35,13 @@ const SideMenu = ({ showMenu, onCloseMenu }) => {
       fontSize="2xl"
       spacing={4}
     >
-      <ScrollLink to="our-services" onClick={onCloseMenu}>
+      <ScrollLink to="home" onClick={onCloseMenu}>
         Home
       </ScrollLink>
       <ScrollLink to="our-services" onClick={onCloseMenu}>
         Servicios
       </ScrollLink>
-      <ScrollLink to="our-services" onClick={onCloseMenu}>
+      <ScrollLink to="success-cases" onClick={onCloseMenu}>
         Proyectos
       </ScrollLink>
       <Button colorScheme="red">Contactanos</Button>

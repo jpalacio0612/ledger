@@ -15,6 +15,7 @@ const options = {
 const Hero = () => {
   return (
     <Grid
+      id="home"
       as="section"
       height={{ base: "auto", lg: "100vh" }}
       display="grid"

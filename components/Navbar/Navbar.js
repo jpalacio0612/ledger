@@ -31,13 +31,11 @@ const Navbar = () => {
         fontSize="2xl"
         display={{ base: "none", md: "none", lg: "flex" }}
       >
-        <Link>Home</Link>
+        <ScrollLink to="home">Home</ScrollLink>
         <ScrollLink to="our-services">Servicios</ScrollLink>
-        <Link>Proyectos</Link>
-        <Link>Carreras</Link>
+        <ScrollLink to="success-cases">Proyectos</ScrollLink>
         <Button colorScheme="red">Contactanos</Button>
         <HStack>
-          <AiOutlineSearch />
           <AiFillInstagram size={30} />
           <AiFillFacebook size={30} />
           <AiFillTwitterSquare size={30} />

@@ -11,7 +11,6 @@ const OurServices = () => {
       padding={4}
       bgColor="gray.900"
       color="white"
-      paddingBottom={16}
     >
       <Heading textAlign="center" marginY={8} size="2xl">
         Our Services
